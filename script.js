@@ -17,11 +17,16 @@ let todos = [];
 let id = 0;
 
 function addTodo(Description) {
+  if (!taskInput.value) {
+    window.alert("Task non valida");
+    return;
+  }
   const description = taskInput.value || Description;
   var newList = document.createElement("li");
   newList.innerHTML = `${description}<i class="far fa-circle"></i><i class="fas fa-edit"></i><i class="fas fa-trash"></i>`;
   newList.dataset.id = id;
   taskList.appendChild(newList);
+  taskInput.value = "";
 
   todos.push({
     description: description,
