@@ -29,6 +29,7 @@ function todosApp() {
     const editTask = prompt("✒️ Edit task");
     if (!validateInut(editTask)) {
       window.alert("Invalid task! ❌");
+      return;
     } else {
       li.querySelector("span").innerText = editTask;
     }
@@ -42,8 +43,10 @@ function todosApp() {
 
   if (!validateInut(taskContent)) {
     window.alert("Invalid task! ❌");
+    return;
   } else {
     taskList.appendChild(li);
+    taskInput.value = "";
   }
 }
 
